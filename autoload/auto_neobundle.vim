@@ -20,7 +20,7 @@ function! s:update(interval_tics)
     " update plugins with neobundle.vim
     Unite neobundle/update -hide-source-names -silent -buffer-name=auto-neobundle -winheight=1 -auto-quit
 
-    execute "redir! > ".expand('%:h')."/timestamp"
+    execute "redir! > ".expand('<sfile>:h')."/timestamp"
         silent! echon localtime()
     redir END
 endfunction

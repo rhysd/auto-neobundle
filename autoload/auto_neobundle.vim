@@ -18,8 +18,7 @@ function! s:update(interval_tics)
     endif
 
     " update plugins with neobundle.vim
-    " Unite neobundle/update -hide-source-names -silent -buffer-name=auto-neobundle
-    Unite file
+    Unite neobundle/update -hide-source-names -silent -buffer-name=auto-neobundle
 
     execute "redir! > ".expand('%:h')."/timestamp"
         silent! echon localtime()

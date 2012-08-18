@@ -5,12 +5,18 @@ if exists("g:auto_neobundle_loaded")
 endif
 let g:auto_neobundle_loaded = 1
 
-let s:save_cpo = &cpo
-set cpo&vim
+" 行連結を使っていないので save_cpo は必要ない
+" :help use-cpo-save
+
+" set timestamp file location
+if !exists("g:auto_neobundle_timestamp_dir")
+    let g:auto_neobundle_timestamp_dir = expand('~/.vim')
+endif
 
 " Update plugins with neobundle if tics seconds have passed.
 function! s:update(interval_tics)
-    let stamp = filereadable("timestamp") ? readfile("timestamp")[0] : 0
+    let stamp_file = g:auto_neobundle_timestamp_dir . '/auto_neobundle_timestamp'
+    let stamp = filereadable(stamp_file) ? readfile(stamp_file)[0] : 0
     let now = localtime()
 
     if(now - stamp < a:interval_tics)
@@ -18,9 +24,10 @@ function! s:update(interval_tics)
     endif
 
     " update plugins with neobundle.vim
-    Unite neobundle/update -hide-source-names -silent -buffer-name=auto-neobundle -winheight=1 -auto-quit
+    call unite#start([['neobundle/update']])
+    " Unite neobundle/update -hide-source-names -silent -buffer-name=auto-neobundle -winheight=1 -auto-quit
 
-    execute "redir! > ".expand('<sfile>:h')."/timestamp"
+    execute "redir! > ".stamp_file
         silent! echon localtime()
     redir END
 endfunction
@@ -41,6 +48,3 @@ function! auto_neobundle#update_30days()
     " 2592000 seconds/30days
     call s:update(2592000)
 endfunction
-
-let &cpo = s:save_cpo
-unlet s:save_cpo

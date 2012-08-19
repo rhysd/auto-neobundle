@@ -24,7 +24,7 @@ function! auto_neobundle#update(tics)
     endif
 
     " update plugins with neobundle.vim
-    call unite#start([['neobundle/update']], {'auto_quit' : 1, 'buffer_name' : 'auto-neobundle', 'winheight' : 3, 'start_insert' : 0})
+    call unite#start([['neobundle/update']], {'auto_quit' : 1, 'buffer_name' : 'auto-neobundle', 'winheight' :3, 'start_insert' : 0})
     " Unite neobundle/update -hide-source-names -silent -buffer-name=auto-neobundle -winheight=1 -auto-quit
 
     execute "redir! > ".stamp_file
@@ -44,7 +44,13 @@ function! auto_neobundle#update_weekly()
     call auto_neobundle#update(604800)
 endfunction
 
-function! auto_neobundle#update_30days()
+" check per 3 days
+function! auto_neobundle#update_every_3days()
+    " 259200 seconds/3days
+    call auto_neobundle#update(259200)
+endfunction
+
+function! auto_neobundle#update_every_30days()
     " 2592000 seconds/30days
     call auto_neobundle#update(2592000)
 endfunction

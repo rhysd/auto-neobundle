@@ -15,7 +15,7 @@ endif
 
 " Update plugins with neobundle if tics seconds have passed.
 function! auto_neobundle#update(tics)
-    let stamp_file = g:auto_neobundle_timestamp_dir . '/auto_neobundle_timestamp'
+    let stamp_file = g:auto_neobundle_timestamp_dir . '/.auto_neobundle_timestamp'
     let stamp = filereadable(stamp_file) ? readfile(stamp_file)[0] : 0
     let now = localtime()
 

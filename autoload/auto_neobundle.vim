@@ -24,8 +24,7 @@ function! auto_neobundle#update(tics)
     endif
 
     " update plugins with neobundle.vim
-    call unite#start([['neobundle/update']])
-    " Unite neobundle/update -hide-source-names -silent -buffer-name=auto-neobundle -winheight=1 -auto-quit
+    Unite neobundle/update -hide-source-names -buffer-name=auto-neobundle -winheight=1 -auto-quit
 
     execute "redir! > ".stamp_file
         silent! echon now

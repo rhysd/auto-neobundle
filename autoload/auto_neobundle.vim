@@ -13,6 +13,13 @@ if !exists("g:auto_neobundle_timestamp_dir")
     let g:auto_neobundle_timestamp_dir = expand('~/.vim')
 endif
 
+" update timestamp.
+function! auto_neobundle#timestamp()
+    execute "redir! > " . g:auto_neobundle_timestamp_dir . "/.auto_neobundle_timestamp"
+        silent! echo now
+    redir END
+endfunction
+
 " Update plugins with neobundle if tics seconds have passed.
 function! auto_neobundle#update(tics)
     let stamp_file = g:auto_neobundle_timestamp_dir . '/.auto_neobundle_timestamp'
@@ -25,11 +32,9 @@ function! auto_neobundle#update(tics)
 
     " update plugins with neobundle.vim
     call unite#start([['neobundle/update']], {'auto_quit' : 1, 'buffer_name' : 'auto-neobundle', 'winheight' :3, 'start_insert' : 0})
-    " Unite neobundle/update -hide-source-names -silent -buffer-name=auto-neobundle -winheight=1 -auto-quit
+    " Unite neobundle/update -hide-source-names -buffer-name=auto-neobundle -winheight=3 -auto-quit
 
-    execute "redir! > ".stamp_file
-        silent! echon now
-    redir END
+    call auto_neobundle#timestamp()
 endfunction
 
 " check daily
@@ -54,3 +59,5 @@ function! auto_neobundle#update_every_30days()
     " 2592000 seconds/30days
     call auto_neobundle#update(2592000)
 endfunction
+
+command! AutoNeoBundleTimestamp call auto_neobundle#timestamp()

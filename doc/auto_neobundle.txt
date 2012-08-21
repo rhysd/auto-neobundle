@@ -7,6 +7,7 @@ CONTENTS          *auto-neobundle-contents*
 Introduction      |auto-neobundle-introduction|
 Usage             |auto-neobundle-usage|
 Functions         |auto-neobundle-functions|
+Commands          |auto-neobundle-commands|
 Dependency        |auto-neobundle-dependency|
 TimestampFile     |auto-neobundle-timestamp-file|
 License           |auto-neobundle-license|
@@ -54,6 +55,17 @@ auto_neobundle#update_every_3days()    *auto_neobundle#update_every_3days()*
 auto_neobundle#update({tics})          *auto_neobundle#update()*
   If more than {tics} seconds have passed since previous auto-updating, start
   |neobundle| updating with |unite| asynchronously.
+
+auto_neobundle#timestamp()             *auto_neobundle#timestamp()*
+  Update timestamp file without updating. If you update plugins manually, it's
+  better to call |auto_neobundle#timestamp()| together for resetting time
+  count.
+
+==============================================================================
+Commands          *auto-neobundle-commands*
+
+AutoNeoBundleTimestamp                 *AutoNeoBundleTimestamp*
+  Command version of |auto_neobundle#timestamp()|.
 
 ==============================================================================
 Dependency        *auto-neobundle-dependency*

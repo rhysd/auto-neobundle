@@ -68,6 +68,15 @@ AutoNeoBundleTimestamp                 *AutoNeoBundleTimestamp*
   Command version of |auto_neobundle#timestamp()|.
 
 ==============================================================================
+Variables         *auto-neobundle-variables*
+
+g:auto_neobundle_timestamp_dir         *g:auto_neobundle_timestamp_dir*
+  Location of timestamp file.
+
+  The default value is "$HOME/vimfiles" in Windows or "$HOME/.vim" in other
+  OS.
+
+==============================================================================
 Dependency        *auto-neobundle-dependency*
 
 |auto-neobundle| depends on |neobundle|, |unite| and |vimproc|. So you must

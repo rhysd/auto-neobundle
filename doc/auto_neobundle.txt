@@ -11,18 +11,18 @@ Dependency        |auto-neobundle-dependency|
 TimestampFile     |auto-neobundle-timestamp-file|
 License           |auto-neobundle-license|
 
-================================================================================
+==============================================================================
 INTRODUCTION      *auto-neobundle-introduction*
 
 *auto-neobundle* or *auto_neobundle* enables your plugins auto-updated using
 |neobundle|, |unite| and |vimproc| at regular intervals. The interval is
 customizable by the seconds and pre-set intervals are available.
 
-================================================================================
+==============================================================================
 USAGE             *auto-neobundle-usage*
 
-Write auto-update setting in your |vimrc|. If you want to update plugins weekly
-at vim-starting, you should write below setting in your |vimrc|.
+Write auto-update setting in your |vimrc|. If you want to update plugins
+weekly at vim-starting, you should write below setting in your |vimrc|.
 
   Example:
 >
@@ -32,49 +32,49 @@ at vim-starting, you should write below setting in your |vimrc|.
   augroup END
 <
 
-================================================================================
+==============================================================================
 Functions         *auto-neobundle-functions*
 
-auto_neobundle#update_daily()           *auto_neobundle#update_daily()*
-  If more than a day has passed since previous auto-updating, start |neobundle|
-  updating with |unite| asynchronously.
+auto_neobundle#update_daily()          *auto_neobundle#update_daily()*
+  If more than a day has passed since previous auto-updating, start
+  |neobundle| updating with |unite| asynchronously.
 
-auto_neobundle#update_weekly()           *auto_neobundle#update_weekly()*
-  If more than a week has passed since previous auto-updating, start |neobundle|
-  updating with |unite| asynchronously.
+auto_neobundle#update_weekly()         *auto_neobundle#update_weekly()*
+  If more than a week has passed since previous auto-updating, start
+  |neobundle| updating with |unite| asynchronously.
 
-auto_neobundle#update_every_30days()     *auto_neobundle#update_every_30days()*
-  If more than 30 days have passed since previous auto-updating, start |neobundle|
-  updating with |unite| asynchronously.
+auto_neobundle#update_every_30days()   *auto_neobundle#update_every_30days()*
+  If more than 30 days have passed since previous auto-updating, start
+  |neobundle| updating with |unite| asynchronously.
 
-auto_neobundle#update_every_3days()      *auto_neobundle#update_every_3days()*
-  If more than 3 days have passed since previous auto-updating, start |neobundle|
-  updating with |unite| asynchronously.
+auto_neobundle#update_every_3days()    *auto_neobundle#update_every_3days()*
+  If more than 3 days have passed since previous auto-updating, start
+  |neobundle| updating with |unite| asynchronously.
 
-auto_neobundle#update({tics})            *auto_neobundle#update()*
-  If more than {tics} seconds have passed since previous auto-updating, start |neobundle|
-  updating with |unite| asynchronously.
+auto_neobundle#update({tics})          *auto_neobundle#update()*
+  If more than {tics} seconds have passed since previous auto-updating, start
+  |neobundle| updating with |unite| asynchronously.
 
-================================================================================
+==============================================================================
 Dependency        *auto-neobundle-dependency*
 
 |auto-neobundle| depends on |neobundle|, |unite| and |vimproc|. So you must
 install these plugins before installing |auto-neobundle|.
 
-================================================================================
+==============================================================================
 TimestampFile     *auto-neobundle-timestamp-file*
 
 This plugin stores the time of previous auto-updating to
 *.auto_neobundle_timestamp* in your |vimfiles| directory like $HOME/.vim.
 If you install this plugin, you should remove this timestamp file together.
 
-================================================================================
+==============================================================================
 Home page         *auto-neobundle-home-page*
 
 This plugin is developed in Github repository. See
 https://github.com/rhysd/auto-neobundle .
 
-================================================================================
+==============================================================================
 License           *auto-neobundle-license*
 
   This plugin is distributed under MIT License.
@@ -98,3 +98,6 @@ License           *auto-neobundle-license*
     CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
     TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
     SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:noet:fen:fdl=0:

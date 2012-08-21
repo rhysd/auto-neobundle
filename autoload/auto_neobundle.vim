@@ -5,7 +5,7 @@ if exists("g:auto_neobundle_loaded")
 endif
 let g:auto_neobundle_loaded = 1
 
-" 行連結を使っていないので save_cpo は必要ない
+" no need to save cpo because line continuation isn't used.
 " :help use-cpo-save
 
 " set timestamp file location
@@ -20,7 +20,7 @@ function! auto_neobundle#timestamp()
     redir END
 endfunction
 
-" Update plugins with neobundle if tics seconds have passed.
+" update plugins with neobundle if tics seconds have passed.
 function! auto_neobundle#update(tics)
     let stamp_file = g:auto_neobundle_timestamp_dir . '/.auto_neobundle_timestamp'
     let stamp = filereadable(stamp_file) ? readfile(stamp_file)[0] : 0

@@ -10,7 +10,7 @@ let g:auto_neobundle_loaded = 1
 
 " set timestamp file location
 if !exists("g:auto_neobundle_timestamp_dir")
-    let g:auto_neobundle_timestamp_dir = $HOME . has('win32')||has('win64') ? "/vimfiles" : ".vim"
+    let g:auto_neobundle_timestamp_dir = $HOME . (has('win32')||has('win64') ? '/vimfiles' : '/.vim')
 endif
 
 " update timestamp.

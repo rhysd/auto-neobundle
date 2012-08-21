@@ -1,0 +1,100 @@
+*auto_neobundle.txt*  auto updating plugins with neobundle.vim
+
+Author: rhysd <lin90162@yahoo.co.jp>
+
+CONTENTS          *auto-neobundle-contents*
+
+Introduction      |auto-neobundle-introduction|
+Usage             |auto-neobundle-usage|
+Functions         |auto-neobundle-functions|
+Dependency        |auto-neobundle-dependency|
+TimestampFile     |auto-neobundle-timestamp-file|
+License           |auto-neobundle-license|
+
+================================================================================
+INTRODUCTION      *auto-neobundle-introduction*
+
+*auto-neobundle* or *auto_neobundle* enables your plugins auto-updated using
+|neobundle|, |unite| and |vimproc| at regular intervals. The interval is
+customizable by the seconds and pre-set intervals are available.
+
+================================================================================
+USAGE             *auto-neobundle-usage*
+
+Write auto-update setting in your |vimrc|. If you want to update plugins weekly
+at vim-starting, you should write below setting in your |vimrc|.
+
+  Example:
+>
+  augroup AutoNeoBundle
+    autocmd!
+    autocmd VimEnter * call auto_neobundle#update_weekly()
+  augroup END
+<
+
+================================================================================
+Functions         *auto-neobundle-functions*
+
+auto_neobundle#update_daily()           *auto_neobundle#update_daily()*
+  If more than a day has passed since previous auto-updating, start |neobundle|
+  updating with |unite| asynchronously.
+
+auto_neobundle#update_weekly()           *auto_neobundle#update_weekly()*
+  If more than a week has passed since previous auto-updating, start |neobundle|
+  updating with |unite| asynchronously.
+
+auto_neobundle#update_every_30days()     *auto_neobundle#update_every_30days()*
+  If more than 30 days have passed since previous auto-updating, start |neobundle|
+  updating with |unite| asynchronously.
+
+auto_neobundle#update_every_3days()      *auto_neobundle#update_every_3days()*
+  If more than 3 days have passed since previous auto-updating, start |neobundle|
+  updating with |unite| asynchronously.
+
+auto_neobundle#update({tics})            *auto_neobundle#update()*
+  If more than {tics} seconds have passed since previous auto-updating, start |neobundle|
+  updating with |unite| asynchronously.
+
+================================================================================
+Dependency        *auto-neobundle-dependency*
+
+*auto-neobundle* depends on *neobundle*, *unite* and *vimproc*. So you must
+install these plugins before installing *auto-neobundle*.
+
+================================================================================
+TimestampFile     *auto-neobundle-timestamp-file*
+
+This plugin stores the time of previous auto-updating to
+*.auto_neobundle_timestamp* in your |vimfiles| directory like $HOME/.vim.
+If you install this plugin, you should remove this timestamp file together.
+
+================================================================================
+Home page         *auto-neobundle-home-page*
+
+This plugin is developed in Github repository. See
+https://github.com/rhysd/auto-neobundle .
+
+================================================================================
+License           *auto-neobundle-license*
+
+  This plugin is distributed under MIT License.
+
+    Copyright (c) 2012 rhysd
+
+    Permission is hereby granted, free of charge, to any person obtaining
+    a copy of this software and associated documentation files (the
+    "Software"), to deal in the Software without restriction, including
+    without limitation the rights to use, copy, modify, merge, publish,
+    distribute, sublicense, and/or sell copies of the Software, and to
+    permit persons to whom the Software is furnished to do so, subject to
+    the following conditions:
+    The above copyright notice and this permission notice shall be included
+    in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+    OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+    IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+    CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+    TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+    SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

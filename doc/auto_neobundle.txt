@@ -58,8 +58,8 @@ auto_neobundle#update({tics})            *auto_neobundle#update()*
 ================================================================================
 Dependency        *auto-neobundle-dependency*
 
-*auto-neobundle* depends on *neobundle*, *unite* and *vimproc*. So you must
-install these plugins before installing *auto-neobundle*.
+|auto-neobundle| depends on |neobundle|, |unite| and |vimproc|. So you must
+install these plugins before installing |auto-neobundle|.
 
 ================================================================================
 TimestampFile     *auto-neobundle-timestamp-file*

@@ -15,9 +15,8 @@ endif
 
 " update timestamp.
 function! auto_neobundle#timestamp()
-    execute "redir! > " . g:auto_neobundle_timestamp_dir . "/.auto_neobundle_timestamp"
-        silent! echo now
-    redir END
+    let stamp_file = g:auto_neobundle_timestamp_dir . '/.auto_neobundle_timestamp'
+    call writefile([localtime()], stamp_file)
 endfunction
 
 " update plugins with neobundle if tics seconds have passed.

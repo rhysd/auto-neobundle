@@ -30,8 +30,8 @@ function! auto_neobundle#update(tics)
     endif
 
     " update plugins with neobundle.vim
-    call unite#start([['neobundle/update']], {'auto_quit' : 1, 'buffer_name' : 'auto-neobundle', 'winheight' : 5, 'start_insert' : 0, 'log' : 1})
-    " Unite neobundle/update -hide-source-names -buffer-name=auto-neobundle -winheight=5 -auto-quit -log -no-start-insert -auto-quit
+    " Unite neobundle/update -buffer-name=auto-neobundle -winheight=5 -auto-quit -no-start-insert -log -no-prompt-visible
+    call unite#start([['neobundle/update']], {'buffer_name' : 'auto-neobundle', 'winheight' : 5, 'auto_quit' : 1, 'start_insert' : 0, 'log' : 1, 'prompt-visible' : 0})
 
     call auto_neobundle#timestamp()
 endfunction
